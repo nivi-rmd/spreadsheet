@@ -148,7 +148,8 @@
 
 /*dashboar*/
 .navbar-global {
-    background-color: indigo;
+    background-color: rgb(187, 40, 48);
+    border-color: transparent;
   }
   
   .navbar-global .navbar-brand {
@@ -245,4 +246,37 @@
   
   .collapsed + .main-content {
     margin-left: 60px;
+  }
+  .minBox
+  {
+    background-color: #666464;
+    min-height: 250px;
+  }
+  .minBox p.title
+  {
+    position: absolute;
+    bottom: 20%;
+    font-size: 25px;
+    color: #fff;
+    left: 10%;
+  }
+  .minBox p.date
+  {
+    position: absolute;
+    bottom: 10%;
+    font-size: 20px;
+    color: #fff;
+    left: 10%;
+    font-weight: 300;
+  }
+  #schedule div
+  {
+      margin-bottom: 15px;
+  }
+  h2
+  {
+    color: #bb2830;
+    font-size: 38px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
   }

@@ -7,103 +7,201 @@
 
 <body>
 
-        <nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Blackboard project</a>
-                  </div>
-                  <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-user navbar-right">
-                      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Nivi</a></li>
-                      <li><a href="#about"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
+  <nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Blackboard project</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-user navbar-right">
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-user"></span> Nivi</a>
+          </li>
+          <li>
+            <a href="index.html">
+              <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
-          <nav class="navbar-primary">
-            <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
-            <ul class="navbar-primary-menu">
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
-                <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Profile</span></a>
-                <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Settings</span></a>
-                <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Notification</span></a>
-                <a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Monitor</span></a>
-              </li>
-            </ul>
-          </nav>
-          <div class="main-content">
-                <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="text-center">
-                                    Timetable 
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                            <table id="spreadsheet" class="table table-bordered"></table>
-                          </div>
+  <nav class="navbar-primary">
+    <a href="#" class="btn-expand-collapse">
+      <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+    <ul class="navbar-primary-menu">
+      <li>
+        <a href="#" class="sidmenu" data-id="dashboard">
+          <span class="glyphicon glyphicon-list-alt"></span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+
+        <a href="#" class="sidmenu" data-id="timetable">
+          <span class="glyphicon glyphicon-film"></span>
+          <span class="nav-label">Timetable</span>
+        </a>
+        <a href="#" class="sidmenu" data-id="cycletest">
+          <span class="glyphicon glyphicon-calendar"></span>
+          <span class="nav-label">Cycle Test</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="main-content">
+    <div class="container">
+      <div class="row mainText" id="dashboard">
+        <div class="col-md-12">
+          <h2 class="text-center">
+            Welcome to student portal
+          </h2>
+
+        </div>
+
+      </div>
+      <div class="row mainText" id="timetable">
+        <div class="col-md-12">
+          <h2 class="text-center">
+            Timetable
+          </h2>
+
+          <div class="table-responsive">
+            <table id="spreadsheet" class="table table-bordered"></table>
           </div>
 
+        </div>
+
+      </div>
+      <div class="row mainText" id="cycletest">
+
+        <div class="col-md-12">
+          <h2 class="text-center">
+            Cycle test
+          </h2>
+        </div>
+        <div class="row">
+          <div id="schedule" class="col-md-12">
+            <!-- <div class="col-md-4">
+              <div class="minBox">
+                <p>Test</p>
+              </div>
+
+            </div>
+            <div class="col-md-4">
+              <div class="minBox">
+                <p>Test</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="minBox">
+                <p>Test</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="table-responsive">
+          <!-- <table id="spreadsheet" class="table table-bordered"></table> -->
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- https://bootsnipp.com/snippets/featured/google-style-login-extended-with-html5-localstorage -->
 
-<!-- https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g -->
-<script type="text/javascript">
-$( document ).ready(function() {
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
 
-    $('.btn-expand-collapse').click(function(e) {
-				$('.navbar-primary').toggleClass('collapsed');
-});
- $.ajax
-({
-  type: "Get",
-  url: "https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/values/Sheet1!A1%3Af9?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g",
-  success: function(data)
-  {
+      $(".mainText").hide();
+      $("#dashboard").show();
 
-   $.each(data.values, function(index, row){
+      $('.btn-expand-collapse').click(function (e) {
+        $('.navbar-primary').toggleClass('collapsed');
+      });
 
-     console.log(row);
-        var line = "";
-        $.each(row, function(key, value){
-            if(0 === index){
-                line += '<th>' + value + '</th>';    
-            }else{
-                line += '<td>' + value + '</td>';
-            }
+      $('.sidmenu').click(function (e) {
+
+        e.preventDefault();
+        $(".mainText").hide();
+        var getText = $(this).data("id");
+        $("#" + getText).show();
+
+      });
+
+
+
+      $.ajax
+        ({
+          type: "Get",
+          url: "https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/values/Sheet1!A1%3Af9?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g",
+          success: function (data) {
+
+            $.each(data.values, function (index, row) {
+
+              var line = "";
+              $.each(row, function (key, value) {
+                if (0 === index) {
+                  line += '<th>' + value + '</th>';
+                } else {
+                  line += '<td>' + value + '</td>';
+                }
+              });
+              line = '<tr>' + line + '</tr>';
+              $('#spreadsheet').append(line);
+            });
+
+          }
         });
-        console.log(line);
-        line = '<tr>' + line + '</tr>';
-        $('#spreadsheet').append(line);
+
+      $.ajax
+        ({
+          type: "Get",
+          url: "https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/values/Sheet2!A1%3Ab4?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g",
+          success: function (data) {
+            console.log(data);
+            var divs = "";
+            $.each(data.values, function (index, row) {
+
+              console.log(row[1]);
+
+              divs = "<div class='col-md-4'>";
+
+              divs += "<div class='minBox'>";
+
+              divs += "<p class='title'>"+row[1]+"</p>";
+              divs += "<p class='date'>"+row[0]+"</p>";
+              divs += "</div><div>";
+
+    
+              $('#schedule').append(divs);
+            });
+
+          }
+        });
+
     });
 
-  }
-});
-
-});
 
 
 
 
 
-
-</script>
+  </script>
 
 
 </body>
+
 </html>
