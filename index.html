@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<title>Timetable App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/main.css">
+<body>
+
+<div class="w3-container">
+  <h2>Weekly timetable</h2>
+  <p>Student benefits</p>
+
+
+  <table id="spreadsheet" class="w3-table-all w3-large"></table>
+
+
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- https://bootsnipp.com/snippets/featured/google-style-login-extended-with-html5-localstorage -->
+
+<!-- https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g -->
+<script type="text/javascript">
+
+
+
+$.ajax
+({
+  type: "Get",
+  url: "https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/values/Sheet1!A1%3Af9?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g",
+  success: function(data)
+  {
+
+
+    
+   $.each(data.values, function(index, row){
+
+     console.log(row);
+        var line = "";
+        $.each(row, function(key, value){
+            if(0 === index){
+                line += '<th>' + value + '</th>';    
+            }else{
+                line += '<td>' + value + '</td>';
+            }
+        });
+        console.log(line);
+        line = '<tr>' + line + '</tr>';
+        $('#spreadsheet').append(line);
+    });
+
+  }
+});
+
+
+</script>
+
+
+</body>
+</html>
