@@ -2,57 +2,51 @@
 <html>
 <title>Timetable App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
 <link rel="stylesheet" href="css/main.css">
-<body>
 
-<div class="w3-container">
-  <h2>Weekly timetable</h2>
-  <p>Student benefits</p>
-
-
-  <table id="spreadsheet" class="w3-table-all w3-large"></table>
-
-
-</div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<!-- https://bootsnipp.com/snippets/featured/google-style-login-extended-with-html5-localstorage -->
-
-<!-- https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g -->
-<script type="text/javascript">
-
-
-
-$.ajax
-({
-  type: "Get",
-  url: "https://sheets.googleapis.com/v4/spreadsheets/1kUzBW16np-y0XKFHvuhMdkrm5bNHJRGyMcKCAPv_Lvs/values/Sheet1!A1%3Af9?key=AIzaSyBDoP3LGgNj9kd6EenvZTKny6yFXH9bz3g",
-  success: function(data)
-  {
+<body id="login">
+    <div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="http://3.bp.blogspot.com/_bcKdW0k4zbU/TCnZdq1lX2I/AAAAAAAAAeU/PYng5dkNF5g/s1600/index.jpg"
+            />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" id="loginsubmit">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address">
+                <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password"> -->
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            </form>
+            <!-- /form -->
+        </div>
+        <!-- /card-container -->
+    </div>
+    <!-- /container -->
 
 
-    
-   $.each(data.values, function(index, row){
 
-     console.log(row);
-        var line = "";
-        $.each(row, function(key, value){
-            if(0 === index){
-                line += '<th>' + value + '</th>';    
-            }else{
-                line += '<td>' + value + '</td>';
-            }
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#loginsubmit").submit(function (event) {
+                event.preventDefault();
+
+                if ($("input[name*='email']").val() === "nivirajan.rmk@gmail.com") {
+                    window.location.href = "http://localhost/2018/nivi/spreadsheet/home.html";
+                }
+                else
+                {
+                    alert("Login not working. Please contact administrator");
+                }
+            });
+
         });
-        console.log(line);
-        line = '<tr>' + line + '</tr>';
-        $('#spreadsheet').append(line);
-    });
 
-  }
-});
-
-
-</script>
+    </script>
 
 
 </body>
+
 </html>
